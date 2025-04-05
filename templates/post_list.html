@@ -1,0 +1,17 @@
+
+<!-- por defecto es objet_list -->
+{% for publicacion in object_list %}
+
+
+    <h2><a href="{% url 'post_details' publicacion.pk %}" >{{publicacion.title}}</a></h2>
+
+    <!-- el empty permite mostrar algo si no hay elementos insertados -->
+{% empty %} 
+
+<h1>hi</h1>
+
+{% endfor %}
+
+
+<h2><a href="{% url 'post_create' %}">INGRESA AQUI!</a></h2>
+
