@@ -1,0 +1,128 @@
+/* Estilo específico para edición */
+.edit-container {
+    max-width: 800px;
+    margin: 30px auto;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.edit-header {
+    border-bottom: 2px solid #6a0dad;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.edit-header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.post-title {
+    color: #6a0dad;
+}
+
+.edit-form-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.1);
+    border: 1px solid #e0d0f0;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.3s;
+}
+
+.form-field:focus {
+    border-color: #6a0dad;
+    outline: none;
+}
+
+textarea.form-field {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-name {
+    flex-grow: 1;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px dashed #ccc;
+}
+
+.file-input {
+    display: none;
+}
+
+.browse-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.browse-btn:hover {
+    background: #e0e0e0;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.save-btn {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #5a0b9d;
+}
+
+.cancel-link {
+    color: #6a0dad;
+    padding: 12px 25px;
+    text-decoration: none;
+    border: 1px solid #6a0dad;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.cancel-link:hover {
+    background-color: #f5f0fa;
+}

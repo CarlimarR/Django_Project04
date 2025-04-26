@@ -1,13 +1,40 @@
-<!-- FORMULARIO -->
-
-<form action="" method="post">
-
-
-    {% csrf_token %}
-
-    {{form.as_p}}
-
-    <input type="submit" value="Create Post">
-
-</form>
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Editar{% else %}Crear{% endif %} Post</title>
+    <link rel="stylesheet" href="{% static 'css/post_create.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">{% if form.instance.pk %}Editar{% else %}Crear{% endif %} Post</h1>
+        
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                <ul class="errorlist">
+                    {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if field.help_text %}
+                <small style="color: #666; font-size: 12px;">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+            
+            <button type="submit" class="submit-btn">
+                {% if form.instance.pk %}Actualizar{% else %}Crear{% endif %} Post
+            </button>
+        </form>
+    </div>
+</body>
+</html>

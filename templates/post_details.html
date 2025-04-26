@@ -1,23 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>{{ object.title }}</title>
+    <!-- Carga el archivo CSS -->
+
+    <link rel="stylesheet" href="{% static 'css/post_details.css' %}">
 </head>
 <body>
-    
-    <h1>{{ object.title }}</h1>
-    <p>{{ object.description }}</p>
-    {% if post_2.image %}
-    <img src="{{ post_2.image.url }}" alt="{{post_2.tittle}}">
-    {% endif %}
-    <h6>{{ object.pud_date }}</h6>
-    <h5>{{ object.author }}</h5>
-
-    <!-- botones de crud -->
-        <a href="{% url 'post_update' object.pk %}">Editar</a>  
-        <a href="{% url 'post_delete' object.pk %}">Eliminar</a>
+    <div class="post-container">
+        <div class="post-header">
+            {% if object.image %}
+            <img class="post-image" src="{{ object.image.url }}" alt="{{ object.title }}">
+            {% endif %}
+            <div>
+                <h1 class="post-title">{{ object.title }}</h1>
+                <div class="post-actions">
+                    <a href="{% url 'post_update' object.pk %}" class="action-btn edit-btn">Editar</a>
+                    <a href="{% url 'post_delete' object.pk %}" class="action-btn delete-btn">Eliminar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p class="post-description">{{ object.description }}</p>
+            
+            <div class="post-meta">
+                <span>Publicado el: {{ object.pub_date|date:"d/m/Y" }}</span>
+                <span>Autor: {{ object.author }}</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

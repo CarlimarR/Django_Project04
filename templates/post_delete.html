@@ -1,15 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Eliminar Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Post: {{ object.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/post_delete.css' %}">
 </head>
 <body>
-    <h1>¿Eliminar "{{ object.title }}"?</h1>
-    <p>Esta acción no se puede deshacer.</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" style="color: red;">Sí, eliminar</button>
-        <a href="{% url 'post_details' object.pk %}">Cancelar</a>
-    </form>
+    <div class="delete-container">
+        <div class="delete-header">
+            <h1>¿Eliminar <span class="post-title">"{{ object.title }}"</span>?</h1>
+        </div>
+        
+        <div class="delete-form-box">
+            <p class="delete-warning">⚠️ Esta acción no se puede deshacer.</p>
+            
+            <form method="post">
+                {% csrf_token %}
+                <div class="delete-actions">
+                    <button type="submit" class="delete-btn">
+                        Sí, eliminar
+                    </button>
+                    <a href="{% url 'post_details' object.pk %}" class="cancel-link">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

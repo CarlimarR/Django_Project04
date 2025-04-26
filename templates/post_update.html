@@ -1,15 +1,66 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Editar Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Post: {{ object.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/post_update.css' %}">
 </head>
 <body>
-    <h1>Editar Post: {{ object.title }}</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- Muestra todos los campos editables del modelo -->
-        <button type="submit">Guardar cambios</button>
-        <a href="{% url 'post_details' object.pk %}">Cancelar</a>
-    </form>
+    <div class="edit-container">
+        <div class="edit-header">
+            <h1>Editar Post: <span class="post-title">{{ object.title }}</span></h1>
+        </div>
+        
+        <div class="edit-form-box">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="form-row">
+                    <label>Title:</label>
+                    <input type="text" name="title" value="{{ form.title.value }}" class="form-field">
+                </div>
+                
+                <div class="form-row">
+                    <label>Description:</label>
+                    <textarea name="description" class="form-field">{{ form.description.value }}</textarea>
+                </div>
+                
+                <div class="form-row">
+                    <label>Image:</label>
+                    <div class="file-upload">
+                        <span class="file-name">
+                            {% if object.image %}
+                                {{ object.image.name }}
+                            {% else %}
+                                No se ha seleccionado ningún archivo
+                            {% endif %}
+                        </span>
+                        <input type="file" name="image" class="file-input">
+                        <button type="button" class="browse-btn">Elegir archivo</button>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <label>Author:</label>
+                    <input type="text" name="author" value="{{ form.author.value }}" class="form-field">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="save-btn">Guardar cambios</button>
+                    <a href="{% url 'post_details' object.pk %}" class="cancel-link">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Script para mostrar el nombre del archivo seleccionado
+        document.querySelector('.file-input').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No se ha seleccionado ningún archivo';
+            document.querySelector('.file-name').textContent = fileName;
+        });
+    </script>
 </body>
 </html>
