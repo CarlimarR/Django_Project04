@@ -4,6 +4,10 @@ from .models import Publicacion
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.views.generic import DetailView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+
+
 
 
 # Create your views here.
@@ -23,4 +27,21 @@ class PostDetailsView(DetailView):
     template_name = "post_details.html"
     model = Publicacion
 
-    #fields = '__all__'  esto coloca todos los datos que tiene el modelo
+    #fields = '__all__'  esto coloca todos los datos que tiene el 
+    
+    
+#MODIFICAR
+
+class PostUpdateView(UpdateView):
+    model = Publicacion
+    template_name = 'post_update.html'  # Template para el formulario de edición
+    fields = ['title', 'description', 'image', 'author']  # Campos editables
+    success_url = '/'  # URL a la que redirigir tras guardar
+
+
+#MODIeliminar
+
+class PostDeleteView(DeleteView):
+    model = Publicacion
+    template_name = 'post_delete.html'  # Template de confirmación
+    success_url = '/'  # URL a la que redirigir tras eliminar

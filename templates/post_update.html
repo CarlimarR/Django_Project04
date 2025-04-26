@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Post</title>
+</head>
+<body>
+    <h1>Editar Post: {{ object.title }}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Muestra todos los campos editables del modelo -->
+        <button type="submit">Guardar cambios</button>
+        <a href="{% url 'post_details' object.pk %}">Cancelar</a>
+    </form>
+</body>
+</html>

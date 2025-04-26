@@ -121,6 +121,9 @@ STATICFILES_DIRS = [BASE_DIR/'static/']           #aqui se registra la carpeta s
 MEDIA_URL = '/media/'                              #parte de la configuracion de las imagenes
 MEDIA_ROOT = BASE_DIR / 'media'                   #parte de la configuracion de las imagenes
 
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

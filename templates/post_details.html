@@ -16,5 +16,8 @@
     <h6>{{ object.pud_date }}</h6>
     <h5>{{ object.author }}</h5>
 
+    <!-- botones de crud -->
+        <a href="{% url 'post_update' object.pk %}">Editar</a>  
+        <a href="{% url 'post_delete' object.pk %}">Eliminar</a>
 </body>
 </html>
