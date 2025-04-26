@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('post_2.urls')),  #aqui se registran todas las urls de la app post_2
+    path('post_2',include('post_2.urls')),  #aqui se registran todas las urls de la app post_2
+    path('', include('auth.urls')),  #aqui se registran todas las urls de la app authentication
 
 ]
