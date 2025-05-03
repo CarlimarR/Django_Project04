@@ -1,0 +1,95 @@
+/* Reset básico para elementos del navbar */
+.navbar-reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Estructura principal del navbar */
+.navbar-container {
+    background-color: #42016b;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el logo */
+.navbar-logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Contenedor de botones */
+.navbar-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilos base para botones */
+.navbar-button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Botón de login */
+.navbar-login {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.navbar-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botón de signup */
+.navbar-signup {
+    background-color: #7e02fb;
+    color: white;
+    border: 1px solid #7e02fb;
+}
+
+.navbar-signup:hover {
+    background-color: #6a00d8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de logout */
+.navbar-logout {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.navbar-logout:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .navbar-buttons {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .navbar-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

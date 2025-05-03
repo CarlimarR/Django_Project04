@@ -1,5 +1,6 @@
-{% extends "includes/navbar.html" %}
-{% block content %}
+
+    {% extends "includes/navbar.html" %}
+    {% block content %}
 <!-- por defecto es objet_list -->
 {% for publicacion in object_list %}
 
@@ -19,4 +20,3 @@
 <h2><a href="{% url 'post_create' %}">Crear Post</a></h2>
 
 {% endblock %}
-

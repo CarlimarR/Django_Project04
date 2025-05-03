@@ -1,22 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
+    <link rel="stylesheet" href="{% static 'css/post_start.css' %}">
 </head>
 <body>
-    <div>
+    <div class="welcome-container">
         <h1>¡Bienvenido!</h1>
         
-        <div>
+        <div class="option-box">
             <h2>¿Ya tienes una cuenta?</h2>
-            <a href="{% url 'login' %}">Ingresar a mi cuenta</a>
+            <a href="{% url 'login' %}" class="option-link">Ingresar a mi cuenta</a>
         </div>
         
-        <div>
+        <div class="option-box">
             <h2>¿Eres nuevo?</h2>
-            <a href="{% url 'signup' %}">Crear cuenta nueva</a>
+            <a href="{% url 'signup' %}" class="option-link">Crear cuenta nueva</a>
         </div>
     </div>
 </body>

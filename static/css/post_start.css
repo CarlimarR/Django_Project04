@@ -1,0 +1,79 @@
+/* Estilos generales con fondo degradado morado */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a1b9a, #9c27b0, #ce93d8);
+    color: white;
+}
+
+/* Contenedor principal */
+.welcome-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Título principal */
+.welcome-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #4a148c;
+}
+
+/* Bloques de opciones */
+.option-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.option-box:hover {
+    transform: translateY(-5px);
+}
+
+.option-box h2 {
+    color: #7b1fa2;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Enlaces */
+.option-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #7b1fa2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.option-link:hover {
+    background-color: #6a1b9a;
+    box-shadow: 0 4px 12px rgba(106, 27, 154, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .welcome-container {
+        padding: 30px 20px;
+    }
+    
+    .welcome-container h1 {
+        font-size: 1.8rem;
+    }
+}
