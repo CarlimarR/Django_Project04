@@ -23,3 +23,6 @@ urlpatterns = [
     path('', include('auth.urls')),  #aqui se registran todas las urls de la app authentication
 
 ]
+
+
+

@@ -37,8 +37,8 @@
                                 No se ha seleccionado ningún archivo
                             {% endif %}
                         </span>
-                        <input type="file" name="image" class="file-input">
-                        <button type="button" class="browse-btn">Elegir archivo</button>
+                        <input type="file" name="image" id="file-input" class="file-input" style="display: none;">
+                        <button type="button" class="browse-btn" onclick="document.getElementById('file-input').click()">Cambiar Imagen</button>
                     </div>
                 </div>
                 

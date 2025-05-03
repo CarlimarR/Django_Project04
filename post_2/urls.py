@@ -8,6 +8,7 @@ urlpatterns = [
     path('post_2/details/<int:pk>/', PostDetailsView.as_view(), name='post_details'),  #aqui se registra la vista del html post_details
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post_update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post_delete'),
+
 ]
 
 
